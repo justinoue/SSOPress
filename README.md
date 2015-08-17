@@ -6,12 +6,25 @@ SSOPress is a single sign-on plugin for Wordpress. It currently supports JWT bas
 todo
 
 ##JWT Claim Specs
-todo
+```json
+{
+  "iss"
+  "aud"
+  "iat"
+  "exp"
+  "jti"
+  "username"
+  "email"
+  "first_name"
+  "last_name"
+  "role"
+}
+```
 
 ##Future Plans
 options
 user provisioning
-saml
 relay state handling
 overriding of default login
+mapping of claims
 etc.
