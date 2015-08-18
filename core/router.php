@@ -16,6 +16,8 @@
           case 'jwt_login':
             (new \SSOPress\Controllers\SSO\JWT)->login();
             break;
+          case 'login_error':
+            (new \SSOPress\Controllers\SSOController)->login_error();
         }
       }
     }

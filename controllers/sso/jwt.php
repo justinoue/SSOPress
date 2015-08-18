@@ -20,7 +20,6 @@
         }
       }
 
-      $username =     isset($decoded->username) ? $decoded->username : explode('@', $decoded->email)[0];
       $first_name =   isset($decoded->first_name) ? $decoded->first_name : '';
       $last_name =    isset($decoded->last_name) ? $decoded->last_name : '';
       $display_name = isset($decoded->display_name) ? $decoded->display_name : $first_name.' '.$last_name;
@@ -30,7 +29,7 @@
 
       $attrs = [
         'email'         => $decoded->email,
-        'username'      => $username,
+        'username'      => $decoded->username,
         'website'       => isset($decoded->website) ? $decoded->website : '',
         'nicename'      => $nicename,
         'display_name'  => $display_name,
@@ -40,6 +39,6 @@
         'nickname'      => $nickname,
         'description'   => isset($decoded->description) ? $decoded->description : '',
       ];
-      parent::login_by_email($attrs);
+      parent::login($attrs);
     }
   }

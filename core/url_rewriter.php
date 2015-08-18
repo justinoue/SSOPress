@@ -19,5 +19,11 @@
         'index.php?ssopress=true&ssopress_action=jwt_login',
         'top'
       );
+
+      add_rewrite_rule(
+        '^ssopress/error/?$',
+        'index.php?ssopress=true&ssopress_action=login_error',
+        'top'
+      );
     }
   }
