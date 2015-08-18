@@ -4,6 +4,9 @@ SSOPress is a single sign-on plugin for Wordpress. It currently operates via JWT
 ##Installation
 Just download and jam in your plugins directory. The configuration menu is under Settings > Single Sign-on.
 
+##Requirements
+This was tested with Wordpress 4.2.4 and PHP 5.5.9. I'm going to say don't use it with anything less than PHP 5.4 and Wordpress 4.2.
+
 ##Configuration
 Configuration is simple. Just provide your SSO provider's Login URL, Logout URL, and JWT Secret.
 
