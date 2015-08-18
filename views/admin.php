@@ -36,6 +36,33 @@
             <p class="description"></p>
           </td>
         </tr>
+        <tr>
+          <th scope="row">
+            <label for="sso-required">Require single sign-on?</label>
+          </th>
+          <td>
+            <input type="checkbox" name="sso_required" id="sso-required" class="regular-checkbox" <?php echo $this->options['sso_required'] ? 'checked="checked"' : ''; ?>>
+            <p class="description">Enabling this option will redirect users from the default Wordpress login page to your Remote Login URL.</p>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <label for="provision-users">Auto provision users?</label>
+          </th>
+          <td>
+            <input type="checkbox" name="provision_users" id="provision-users" class="regular-checkbox" <?php echo $this->options['provision_users'] ? 'checked="checked"' : ''; ?>>
+            <p class="description">Single sign-on requests for users that do not exist will be created automatically.</p>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <label for="scramble-passwords">Scramble passwords?</label>
+          </th>
+          <td>
+            <input type="checkbox" name="scramble_passwords" id="scramble-passwords" class="regular-checkbox" <?php echo $this->options['scramble_passwords'] ? 'checked="checked"' : ''; ?>>
+            <p class="description">Enable this option to set users' to unknown random passwords to ensure single sign-on is used.</p>
+          </td>
+        </tr>
       </tbody>
     </table>
     <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>

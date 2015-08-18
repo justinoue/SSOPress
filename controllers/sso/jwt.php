@@ -24,7 +24,14 @@
         wp_set_current_user($user->ID, $user->user_login);
         wp_set_auth_cookie($user->ID);
         do_action('wp_login', $user->user_login );
-        wp_redirect(home_url());
+        
+        $return_to = filter_var($_GET['return_to'], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED);
+        if($return_to != ""){
+          wp_redirect($return_to);
+        }
+        else{
+          wp_redirect(home_url());
+        }
         exit();
       }
       else{

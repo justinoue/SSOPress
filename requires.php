@@ -5,5 +5,6 @@
   require('core/router.php');
   require('controllers/application.php');
   require('controllers/admin.php');
+  require('controllers/login.php');
   require('controllers/sso.php');
   require('controllers/sso/jwt.php');

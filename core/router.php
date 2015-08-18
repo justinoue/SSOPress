@@ -3,7 +3,7 @@
   if(!defined('ABSPATH')) die();
 
   class Router{
-    public function init($query){
+    public function parse_query($query){
       if($query->is_main_query() && get_query_var('ssopress') == 'true'){
         add_action('template_redirect', [$this, 'route'], 0);
       }

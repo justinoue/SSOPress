@@ -22,8 +22,9 @@
       }
       public function hooks(){
         add_action('init', [new \SSOPress\Core\URLRewriter, 'init']);
-        add_action('parse_query', [new \SSOPress\Core\Router, 'init']);
-        add_action('admin_menu', [new \SSOPress\Controllers\AdminController, 'init']);
+        add_action('parse_query', [new \SSOPress\Core\Router, 'parse_query']);
+        add_action('admin_menu', [new \SSOPress\Controllers\AdminController, 'admin_menu']);
+        add_action('init', [new \SSOPress\Controllers\LoginController, 'init'], 0);
       }
 
       public function activation_hooks(){
