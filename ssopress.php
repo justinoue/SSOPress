@@ -2,8 +2,8 @@
 <?php
   /*
     Plugin Name: SSO Press
-    Plugin URI: http://www.github.com/justinoue
-    Description: Easy Single Sign-on for Wordpress
+    Plugin URI: https://github.com/justinoue/SSOPress
+    Description: Easy Single Sign-on for Wordpress. Adds a Single Sign-on menu option to the settings menu <a href="/wp-admin/options-general.php?page=ssopress"> here</a>.
     Version: 0.1
     Author: Justin Ouellette
     Author URI: http://jouellette.com
@@ -14,6 +14,7 @@
     class SSOPress{
       public static $secret = 'Rz0xu-vlHbN29JHSgSm0jc2PMQEkOwc31pdhk2YOGS1zo1oYVnXWQNbl2IvRKXGd';
       public static $options_var = 'ssopress';
+      public static $flash_messages_var = 'ssopress_flash_messages';
 
       public function __construct(){
         $this->activation_hooks();
