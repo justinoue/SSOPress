@@ -12,7 +12,6 @@
     require('requires.php');
 
     class SSOPress{
-      public static $secret = 'Rz0xu-vlHbN29JHSgSm0jc2PMQEkOwc31pdhk2YOGS1zo1oYVnXWQNbl2IvRKXGd';
       public static $options_var = 'ssopress';
       public static $flash_messages_var = 'ssopress_flash_messages';
 

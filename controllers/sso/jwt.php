@@ -13,32 +13,32 @@
       
       if(isset($_GET['jwt'])){
         try{
-          $decoded = \Firebase\JWT\JWT::decode($_GET['jwt'], \SSOPress::$secret, ['HS256']);
-        }
-        catch (Exception $e){
-          $decoded = $e;  
+          $decoded = \Firebase\JWT\JWT::decode($_GET['jwt'], $this->options['secret_token'], ['HS256']);
+          $first_name =   isset($decoded->first_name) ? $decoded->first_name : '';
+          $last_name =    isset($decoded->last_name) ? $decoded->last_name : '';
+          $display_name = isset($decoded->display_name) ? $decoded->display_name : $first_name.' '.$last_name;
+          $nicename =     isset($decoded->nicename) ? $decoded->nicename : $display_name;
+          $role =         isset($decoded->role) ? $decoded->role : 'subscriber';
+          $nickname =     isset($decoded->nickname) ? $decoded->nickname : $username;
+
+          $attrs = [
+            'email'         => $decoded->email,
+            'username'      => $decoded->username,
+            'website'       => isset($decoded->website) ? $decoded->website : '',
+            'nicename'      => $nicename,
+            'display_name'  => $display_name,
+            'first_name'    => $first_name,
+            'last_name'     => $last_name,
+            'role'          => $role,
+            'nickname'      => $nickname,
+            'description'   => isset($decoded->description) ? $decoded->description : '',
+          ];
+          parent::login($attrs);
+        } catch (\Exception $e){
+          var_dump($e);
+          //wp_redirect('/ssopress/error/');
+          //exit();
         }
       }
-
-      $first_name =   isset($decoded->first_name) ? $decoded->first_name : '';
-      $last_name =    isset($decoded->last_name) ? $decoded->last_name : '';
-      $display_name = isset($decoded->display_name) ? $decoded->display_name : $first_name.' '.$last_name;
-      $nicename =     isset($decoded->nicename) ? $decoded->nicename : $display_name;
-      $role =         isset($decoded->role) ? $decoded->role : 'subscriber';
-      $nickname =     isset($decoded->nickname) ? $decoded->nickname : $username;
-
-      $attrs = [
-        'email'         => $decoded->email,
-        'username'      => $decoded->username,
-        'website'       => isset($decoded->website) ? $decoded->website : '',
-        'nicename'      => $nicename,
-        'display_name'  => $display_name,
-        'first_name'    => $first_name,
-        'last_name'     => $last_name,
-        'role'          => $role,
-        'nickname'      => $nickname,
-        'description'   => isset($decoded->description) ? $decoded->description : '',
-      ];
-      parent::login($attrs);
     }
   }

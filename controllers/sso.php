@@ -22,8 +22,6 @@
       exit();
     }
 
-
-
     private function log_in_user(){
       wp_set_current_user($this->user->ID, $this->user->user_login);
       wp_set_auth_cookie($this->user->ID);
