@@ -4,7 +4,7 @@
     Plugin Name: SSO Press
     Plugin URI: https://github.com/justinoue/SSOPress
     Description: Easy Single Sign-on for Wordpress. Adds a Single Sign-on menu option to the settings menu <a href="/wp-admin/options-general.php?page=ssopress"> here</a>.
-    Version: 0.1
+    Version: 0.2.0
     Author: Justin Ouellette
     Author URI: http://jouellette.com
   */
