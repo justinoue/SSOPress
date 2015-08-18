@@ -27,6 +27,7 @@
         ];
         $this->update_options($new_options);
         $this->flash('updated', 'Changes successfully saved!');
+        flush_rewrite_rules();
       }
       else{
         $this->flash('error', 'An error has occured while saving your options. Please try again.');

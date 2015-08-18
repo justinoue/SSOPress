@@ -7,6 +7,8 @@
   <p>More information can be found <a href="https://github.com/justinoue/ssopress" target="_blank">here</a></p>
   <p>Don't have a JWT single sign-on provider? Try: <a href="https://signup.clearlogin.com/?utm_source=wordpress-plugin&amp;utm_medium=link&amp;utm_campaign=try-clearlogin-for-wordpress" target="_blank">Clearlogin</a></p>
   </div>
+  <p>Your site's JWT login URL is: <strong><?php echo site_url();?>/ssopress/jwt/login</strong></p>
+  <p>Your site's logout URL is: <strong><?php echo site_url();?>/wp-login.php?action=logout</strong></p>
   <form method="post" action="<?php echo admin_url('admin.php'); ?>">
     <input type="hidden" name="action" value="sso_press">
     <?php wp_nonce_field('ssopress'); ?>
