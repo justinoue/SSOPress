@@ -41,3 +41,6 @@ Usernames and email addresses are unique among users. When auto provisioning use
   "description": "A super cool guy."
 }
 ```
+
+##Other
+Credits and special thanks to Firebase as this plugin relies on and includes the php-jwt library from https://github.com/firebase/php-jwt
