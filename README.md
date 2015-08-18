@@ -1,4 +1,4 @@
-#SSOPress - v0.2.1
+#SSOPress - v0.2.2
 SSOPress is a single sign-on plugin for Wordpress. It currently operates via JWT based authentication.
 
 ##Installation

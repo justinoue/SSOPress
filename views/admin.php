@@ -3,12 +3,14 @@
   <?php $this->flash_messages(); ?>
   <h2><?php echo get_admin_page_title(); ?> - SSOPress</h2>
   <div class="notice" style="border-left-color: #00a0d2;">
-  <p>You can configure your single sign-on settings here. SSOPress uses JWT for authentication.</p>
-  <p>More information can be found <a href="https://github.com/justinoue/ssopress" target="_blank">here</a></p>
-  <p>Don't have a JWT single sign-on provider? Try: <a href="https://signup.clearlogin.com/?utm_source=wordpress-plugin&amp;utm_medium=link&amp;utm_campaign=try-clearlogin-for-wordpress" target="_blank">Clearlogin</a></p>
+    <p>You can configure your single sign-on settings here. SSOPress uses JWT for authentication.</p>
+    <p>More information can be found <a href="https://github.com/justinoue/ssopress" target="_blank">here</a></p>
+    <p>Don't have a JWT single sign-on provider? Try: <a href="https://signup.clearlogin.com/?utm_source=wordpress-plugin&amp;utm_medium=link&amp;utm_campaign=try-clearlogin-for-wordpress" target="_blank">Clearlogin</a></p>
   </div>
-  <p>Your site's JWT login URL is: <strong><?php echo site_url();?>/ssopress/jwt/login</strong></p>
-  <p>Your site's logout URL is: <strong><?php echo site_url();?>/wp-login.php?action=logout</strong></p>
+  <div class="notice" style="border-left-color: #00a0d2;">
+    <p>Your site's JWT login URL is: <strong><?php echo site_url();?>/ssopress/jwt/login</strong></p>
+    <p>Your site's logout URL is: <strong><?php echo site_url();?>/wp-login.php?action=logout</strong></p>
+  </div>
   <form method="post" action="<?php echo admin_url('admin.php'); ?>">
     <input type="hidden" name="action" value="sso_press">
     <?php wp_nonce_field('ssopress'); ?>
