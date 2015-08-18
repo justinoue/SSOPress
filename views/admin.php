@@ -2,8 +2,11 @@
 <div class="wrap ssopress-admin">
   <?php $this->flash_messages(); ?>
   <h2><?php echo get_admin_page_title(); ?> - SSOPress</h2>
-  <p>Here you can configure your single sign-on settings with SSOPress.</p>
+  <div class="notice" style="border-left-color: #00a0d2;">
+  <p>You can configure your single sign-on settings here. SSOPress uses JWT for authentication.</p>
   <p>More information can be found <a href="https://github.com/justinoue/ssopress" target="_blank">here</a></p>
+  <p>Don't have a JWT single sign-on provider? Try: <a href="https://signup.clearlogin.com/?utm_source=wordpress-plugin&amp;utm_medium=link&amp;utm_campaign=try-clearlogin-for-wordpress" target="_blank">Clearlogin</a></p>
+  </div>
   <form method="post" action="<?php echo admin_url('admin.php'); ?>">
     <input type="hidden" name="action" value="sso_press">
     <?php wp_nonce_field('ssopress'); ?>
@@ -29,7 +32,7 @@
         </tr>
         <tr>
           <th scope="row">
-            <label for="secret-token">Secret Token</label>
+            <label for="secret-token">JWT Secret Token</label>
           </th>
           <td>
             <input type="text" name="secret_token" id="secret-token" class="regular-text" value="<?php echo $this->options['secret_token']; ?>">
@@ -60,7 +63,7 @@
           </th>
           <td>
             <input type="checkbox" name="scramble_passwords" id="scramble-passwords" class="regular-checkbox" <?php echo $this->options['scramble_passwords'] ? 'checked="checked"' : ''; ?>>
-            <p class="description">Enable this option to set users' to unknown random passwords to ensure single sign-on is used.</p>
+            <p class="description">Enable this option to set users' passwords to unknown random passwords, ensuring single sign-on is used.</p>
           </td>
         </tr>
       </tbody>
