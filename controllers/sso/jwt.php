@@ -35,9 +35,9 @@
           ];
           parent::login($attrs);
         } catch (\Exception $e){
-          var_dump($e);
-          //wp_redirect('/ssopress/error/');
-          //exit();
+          //var_dump($e);
+          wp_redirect('/ssopress/error/');
+          exit();
         }
       }
     }
